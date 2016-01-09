@@ -1,9 +1,9 @@
 # atom package
 # dblclick-selectex package
 
-##dblclick to the text, then select the whole word which connect by "-". (eg: aaa-bbb-ccc)
+##dblclick to the text with ctrlkey, then select the whole word which connect by "-",".","/" etc (eg: aaa-bbb-ccc  or  path/main/index.html), select the area according to the boundary letter. 
 
-# atom ±à¼­Æ÷²å¼ş
-##°´×¡ctrl¼üË«»÷ÎÄ×Ö, ¿ÉÒÔÑ¡ÖĞÓÃºáÏßÁ¬½ÓµÄÕû¸öµ¥´Ê(eg: aaa-bbb-ccc)
+# atom ç¼–è¾‘å™¨æ’ä»¶
+##æŒ‰ä½ctrlé”®åŒå‡»æ–‡å­—, å¯ä»¥é€‰ä¸­ç”¨æ¨ªçº¿æˆ–è€…ç‚¹,æ–œæ ç­‰è¿æ¥çš„æ•´ä¸ªå•è¯(eg: aaa-bbb-ccc æˆ–è€… path/main/index.html), å¯ä»¥é€šè¿‡é…ç½®ç•Œå®šç¬¦å·æ¥é€‰å–èŒƒå›´
 
-![screenshot](https://github.com/mike8625/dblclick_selectex/blob/master/demo.gif)
+![screenshot](https://github.com/mike8625/dblclick_selectex/blob/master/demo.gif?raw=true)

@@ -1,8 +1,8 @@
 {
-  "name": "dblclick-selectex",
+  "name": "dblclickselectex",
   "main": "./lib/dblclick-selectex",
-  "version": "0.1.0",
-  "description": "dblclick to the text, then select the whole world which connect by \"-\".",
+  "version": "0.2.0",
+  "description": "dblclick to the text, then select the whole world which connect by \"-\" \".\" \"\/\" etc",
   "keywords": [
   ],
   "repository": "https://github.com/mike8625/dblclick_selectex",
