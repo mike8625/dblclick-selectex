@@ -2,11 +2,10 @@ SubAtom = require 'sub-atom'
 
 class DblClickSelectEX
   config:
-    copyKey:
+    boundary:
       type: 'string'
-      default: 'ctrl'
-      description: 'select the keys'
-      enum: ['alt', 'ctrl', 'meta']
+      default: " ,{}<>\"'"
+      description: 'set boundary letter'
 
   activate: ->
     @subs = new SubAtom
@@ -17,7 +16,7 @@ class DblClickSelectEX
     process.nextTick =>
       if not (@editor = atom.workspace.getActiveTextEditor())
         return
-
+      @boundary = atom.config.get('dblclickselectex.boundary')  
       @linesSubs?.dispose()
       @lines = atom.views.getView(@editor).shadowRoot.querySelector '.lines'
       @linesSubs = new SubAtom
@@ -38,15 +37,23 @@ class DblClickSelectEX
     startCol = @selBufferRange.start.column
     endCol = @selBufferRange.end.column
     curText = @editor.getTextInBufferRange @selBufferRange
-    startTxt = txt.substring 0,startCol+curText.length
-    endTxt = txt.substring startCol, txt.length
-    reg = new RegExp("(\\w+-)*" + curText + "$")
-    arr = startTxt.match reg
-    startRegTxt = startTxt.match(reg)[0];
-    reg = new RegExp("^" + curText + "(-\\w+)*")
-    endRegTxt = endTxt.match(reg)[0];
-    startCol -= startRegTxt.length - curText.length
-    endCol += endRegTxt.length - curText.length
+    startTxt = txt.substring 0,startCol
+    endTxt = txt.substring startCol+curText.length, txt.length
+    
+    startCount = 0
+    for i in startTxt by -1
+      if(@boundary.indexOf(i) > -1)
+        break
+      startCount++
+    
+    endCount = 0
+    for t in endTxt
+      if(@boundary.indexOf(t) > -1)
+        break
+      endCount++ 
+      
+    startCol -= startCount
+    endCol += endCount
     @editor.setSelectedScreenRange [[startRow, startCol], [startRow, endCol]]
 
   deactivate: ->
