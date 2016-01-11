@@ -16,7 +16,7 @@ class DblClickSelectEX
     process.nextTick =>
       if not (@editor = atom.workspace.getActiveTextEditor())
         return
-      @boundary = atom.config.get('dblclickselectex.boundary')  
+      @boundary = atom.config.get('dblclick-selectex.boundary')  
       @linesSubs?.dispose()
       @lines = atom.views.getView(@editor).shadowRoot.querySelector '.lines'
       @linesSubs = new SubAtom

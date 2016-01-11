@@ -1,11 +1,11 @@
 {
-  "name": "dblclickselectex",
+  "name": "dblclick-selectex",
   "main": "./lib/dblclick-selectex",
   "version": "0.2.0",
   "description": "dblclick the text, then select the whole world which connect by \"-\" \".\" \"\/\" etc",
   "keywords": [
   ],
-  "repository": "https://github.com/mike8625/dblclick_selectex",
+  "repository": "https://github.com/mike8625/dblclick-selectex",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
