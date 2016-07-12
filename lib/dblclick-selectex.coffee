@@ -56,6 +56,15 @@ class DblClickSelectEX
 
     startCol -= startCount
     endCol += endCount
+    
+    # tab
+    tabLen = @editor.getTabLength()
+    m = startTxt.match(/\t/g);
+    if m and m.length
+      l = m.length * (tabLen - 1) 
+      startCol += l
+      endCol += l
+      
     @editor.setSelectedScreenRange [[screenStarRow, startCol], [screenStarRow, endCol]]
 
   deactivate: ->
